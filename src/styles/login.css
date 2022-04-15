@@ -1,0 +1,16 @@
+#login span{
+    font-size: 1.0rem;
+    font-weight: 600;
+}
+#login input{
+    margin: 10px 0px;
+}
+
+#login button{
+    border-radius: 10px;
+    color: white;
+    background-color: red;
+    font-size: 1.0rem;
+    padding: 5px 12px;
+}
+

@@ -1,0 +1,51 @@
+@media only screen and (min-width: 1000px) {
+    .favorites-modal{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: white;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, .3);
+        padding: 50px;
+        width: 250px;
+        transition: 1s;
+        transform: translateX(250px);
+        box-sizing: border-box;
+        overflow: auto;
+        font-size: 1.6rem;
+        /* product id.id */
+    }
+    .open{
+        transform: translateX(0);
+    }
+    .close{
+        display: none;
+    }
+    
+}
+.favorites-modal{    
+    font-size: .8rem;
+    /* product id.id */
+    position: absolute;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+    transition: 0.6s;
+    transform-origin: top;
+    top: 50px;
+    right: 5vw;
+    
+    right: center;
+}
+.favorites-modal button{
+    background-color: rgb(52, 116, 212);
+    border-radius: 15px;
+    padding: 8px 10px;
+    font-size: 1.0rem;
+    color: white;
+    
+}
+.open {
+    transform: scale(1);
+  }

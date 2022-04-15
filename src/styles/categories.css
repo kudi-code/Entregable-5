@@ -1,0 +1,13 @@
+#categories{
+    margin-bottom: 15px;
+}
+
+#categories button{
+    background-color: transparent;
+    border: none;
+    color: rgb(255, 60, 60);
+}
+
+#categories button:hover{
+    cursor: pointer;
+}

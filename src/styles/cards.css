@@ -1,0 +1,50 @@
+.cards{
+    margin: 25px auto;
+    border: 1px solid rgb(158, 158, 158);
+    border-radius: 10px;
+    width: 55vw;
+    padding: 10px;
+}
+.cards--img{    
+    height: 150px;
+    max-width: 80%;
+}
+.div--img{
+    width: 100%;
+}
+.cards--img:hover{
+    opacity: 0.2;
+    -webkit-transition: opacity 0.3s;
+   transition: opacity 0.3s;
+   
+}
+
+.cards--img2{
+    height: 150px;
+    height: 150px;
+    max-width: 80%;
+    opacity: 1;
+}
+.cards a{
+   text-decoration: none; 
+}
+.cards span{
+    color: rgb(138, 138, 138);
+}
+.cards b
+{
+    color: black;
+
+}
+.cards button{
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: red;
+    color: white;
+}
+.cards button:hover{    
+    background-color: rgb(133, 1, 1);
+    color: white;
+    cursor: pointer;
+}

@@ -1,0 +1,39 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 10px 0px;
+
+}
+.navbar strong{
+  margin-right: 6vw;
+  font-size: 1.8rem;
+  color: red;
+}
+.navbar button{
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  margin: 0px 15px;
+  color: gray;
+
+}
+  
+  .login {
+    position: absolute;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+    transition: 0.6s;
+    transform-origin: top;
+    top: 50px;
+    right: 10vw;
+    border-radius: 15px;
+    
+    right: center;
+  }
+  
+  .login.open {
+    transform: scale(1);
+  }
