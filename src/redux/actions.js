@@ -11,7 +11,8 @@ export const actions = {
     setproducts: "SET_PRODUCTS",
     setloading: "SET_LOADING",
     setcategories: "SET_CATEGORIES",
-    setcart: "SET_CART"
+    setcart: "SET_CART",
+    setpurchases: "SET_PURCHASES"
 }
 
 const getConfig = () => ({ //Obtener el token de LocalSotorage
@@ -36,6 +37,10 @@ export const setCategories = (categories) => ({
 export const setCart = (cart) => ({
     type: actions.setcart,
     payload: cart
+})
+export const setPurchases = (purchases) => ({
+    type: actions.setpurchases,
+    payload: purchases
 })
 
 
@@ -85,7 +90,7 @@ export const loginThunk = (credentials) => { //Hacer login
     }
 }
 
-export const addCartThunk = (product) => { //Hacer login
+export const addCartThunk = (product) => { //Añadir al carrito
     return dispatch => {
         dispatch(setloading(true))
         axios.post("https://ecommerce-api-react.herokuapp.com/api/v1/cart", product, getConfig())
@@ -93,7 +98,7 @@ export const addCartThunk = (product) => { //Hacer login
     }
 }
 
-export const getCartThunk = (product) => { //Hacer login
+export const getCartThunk = () => { //Obtener el carrito
     return dispatch => {
         dispatch(setloading(true))
         axios.get("https://ecommerce-api-react.herokuapp.com/api/v1/cart", getConfig())
@@ -110,11 +115,30 @@ export const getCartThunk = (product) => { //Hacer login
     }
 }
 
-export const deleteProductThunk = (id) => { //Hacer login
+export const deleteProductThunk = (id) => { //Borrar producto
     return dispatch => {
         dispatch(setloading(true))
         axios.delete(`https://ecommerce-api-react.herokuapp.com/api/v1/cart/${id}`, getConfig())
         .then(res => dispatch(getCartThunk()))
+        .finally(() => dispatch(setloading(false)))
+    }
+}
+
+export const getPurchasesThunk = () => { //Obtener las compras
+    return dispatch => {
+        dispatch(setloading(true))
+        axios.get("https://ecommerce-api-react.herokuapp.com/api/v1/purchases", getConfig())
+        .then(res => {
+            dispatch(setPurchases(res.data.data.purchases))}
+            )
+        .finally(() => dispatch(setloading(false)))
+    }
+}
+
+export const purchaseThunk = (address) => { //Comprar el carrito
+    return dispatch => {
+        dispatch(setloading(true))
+        axios.post("https://ecommerce-api-react.herokuapp.com/api/v1/purchases", address, getConfig())
         .finally(() => dispatch(setloading(false)))
     }
 }

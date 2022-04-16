@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import "../styles/navbar.css";
 import { getCartThunk, loginThunk } from "../redux/actions";
 import { useDispatch } from "react-redux";
-import MyFavourites from "./MyFavourites";
+import Cart from "./Cart";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 import "../styles/login.css";
 
 
@@ -20,6 +22,7 @@ const NavBar = () => {
   const [isProducts , setIsProducts] = useState(false)
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   // console.log(isProducts)
 
   const openCart = () => {
@@ -27,7 +30,6 @@ const NavBar = () => {
     dispatch(getCartThunk());
     // console.log(isProducts)
   };
-
   
 
   const login = (e) => {
@@ -53,6 +55,7 @@ const NavBar = () => {
         <button onClick={() => setIsLoginOpen(!isLoginOpen)}><i className="fas fa-user"></i></button>
         {/* Cart */}
         <button onClick={openCart}><i className="fas fa-shopping-cart"></i></button>
+        <button onClick={() => navigate("/purchases")}><i class="fas fa-box-open"></i></button>      
         
       </nav>
 
@@ -87,7 +90,7 @@ const NavBar = () => {
          } 
         
       </form>
-      <MyFavourites isOpen ={isProducts}></MyFavourites>
+      <Cart isOpen ={isProducts}></Cart>
 
     </div>
   );

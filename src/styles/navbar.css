@@ -14,9 +14,11 @@
   border: none;
   background-color: transparent;
   font-size: 1.2rem;
-  margin: 0px 15px;
+  margin: 0px 10px;
   color: gray;
-
+}
+.navbar button:hover{
+  cursor: pointer;
 }
   
   .login {

@@ -1,5 +1,5 @@
 @media only screen and (min-width: 1000px) {
-    .favorites-modal{
+    .cart-modal{
         position: fixed;
         top: 0;
         bottom: 0;
@@ -23,7 +23,7 @@
     }
     
 }
-.favorites-modal{    
+.cart-modal{    
     font-size: .8rem;
     /* product id.id */
     position: absolute;
@@ -38,7 +38,7 @@
     
     right: center;
 }
-.favorites-modal button{
+.cart-modal button{
     background-color: rgb(52, 116, 212);
     border-radius: 15px;
     padding: 8px 10px;

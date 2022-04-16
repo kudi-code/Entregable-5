@@ -1,9 +1,12 @@
 import { useSelector } from "react-redux";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import ProductDetail from './components/ProductDetail';
-import Favourites from './components/MyFavourites';
 import LoadingScreen from "./components/LoadingScreen";
 import Home from "./components/Home";
+import ProtectedRoutes from "./components/ProtectedRoutes";
+import CartPage from "./components/CartPage";
+import Buy from "./components/Buy";
+import Purchases from "./components/Purchases";
 
 import './App.css';
 
@@ -15,12 +18,15 @@ function App() {
     <div className="App">
      <HashRouter>
      {isLoading && <LoadingScreen />}
-
       <Routes>
-      <Route path="/" element={<Home />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/favorites" element={<Favourites />} />
-            
+        <Route path="/" element={<Home />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route element={<ProtectedRoutes/>}>
+          {/* Rutas Protegidas          */}
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/buy" element={<Buy />} />   
+          <Route path="/purchases" element={<Purchases />} />   
+        </Route>        
       </Routes>
     </HashRouter>
     </div>
