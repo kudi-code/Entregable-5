@@ -33,7 +33,9 @@ const Cart = ({isOpen}) => {
             </button>
           </div>
         ))}
-        <Link to={`/buy`}><button>Purchase</button></Link>
+            {localStorage.getItem("token")==="" ? <span></span> : <Link to={`/buy`}><button>Purchase</button></Link>}
+
+        
       </div>
     </div>    
   );
