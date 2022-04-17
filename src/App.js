@@ -24,9 +24,13 @@ function App() {
         <Route element={<ProtectedRoutes/>}>
           {/* Rutas Protegidas          */}
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/buy" element={<Buy />} />   
-          <Route path="/purchases" element={<Purchases />} />   
         </Route>        
+        <Route element={<ProtectedRoutes/>}>
+          <Route path="/buy" element={<Buy />} />  
+        </Route>
+        <Route element={<ProtectedRoutes/>}>
+          <Route path="/purchases" element={<Purchases />} />   
+        </Route>
       </Routes>
     </HashRouter>
     </div>
